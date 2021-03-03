@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #my apps:
-    'apps.post'
+    'apps.post',
+    'django_jalali',
+    'tinymce',
+
 ]
 
 MIDDLEWARE = [
