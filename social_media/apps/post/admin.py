@@ -13,7 +13,7 @@ class PostAdmin(admin.ModelAdmin):
     actions = ["active_post", "deactive_post"]
     filter_horizontal = ("tags",)
     exclude = ("date_pub", "comments", "like")
-    list_display = ["title", "date_pub", "user_style", "like_count", "comment_count"]
+    list_display = ["title", "date_pub", "like_count", "comment_count"]
 
     # These are some method that I use in my list display
     def like_count(self, obj):
