@@ -1,7 +1,5 @@
 from django.db import models
 
-from .post import Post
-
 
 class Word(models.Model):
     """
@@ -15,7 +13,7 @@ class Word(models.Model):
         ]
 
     word = models.CharField(max_length=50, verbose_name='کلمه')
-    post = models.ManyToManyField(Post, null=True, related_name='word')
+    post = models.ManyToManyField(to='Post', null=True, related_name='word')
 
     def __str__(self):
         return self.word

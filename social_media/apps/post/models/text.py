@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
-from tinymce.models import HTMLField #https://pypi.org/project/django-tinymce/
+from tinymce.models import HTMLField  # https://pypi.org/project/django-tinymce/
+
 
 class Text(models.Model):
     """
@@ -9,6 +10,7 @@ class Text(models.Model):
     text = HTMLField(verbose_name='متن')
     confirm = models.BooleanField('تایید', default=False)
     date_pub = models.DateTimeField(verbose_name="تاریخ انتشار", auto_now_add=True)
+
     # user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='%(class)s',
     #                          verbose_name='کاربر')
     # like = models.ManyToManyField(User, related_name="%(class)s_likedby", related_query_name="%(class)s_likedby",

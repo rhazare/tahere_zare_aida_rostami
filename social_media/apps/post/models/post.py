@@ -1,5 +1,3 @@
-from datetime import timezone
-
 from django.db import models
 from django_extensions.db.fields import AutoSlugField
 
@@ -11,8 +9,8 @@ from .word import Word
 class Post(Text):
 
     title = models.CharField('عنوان', max_length=50)
-    slug = AutoSlugField(populate_from=[title], unique=True, allow_unicode=True)
-    image = models.ImageField(verbose_name='عکس پست', upload_to='uploads/post_image', null=True, blank=True) #faz 4
+    slug = AutoSlugField(populate_from=['title',], unique=True, allow_unicode=True)
+    image = models.ImageField(verbose_name='عکس پست', upload_to='uploads/post_image', null=True, blank=True) #faz 4 & pip install Pillow
     tags = models.ManyToManyField('Tags', verbose_name="برجسب ها", null=True, blank=True)
 
     class Meta(Text.Meta):
